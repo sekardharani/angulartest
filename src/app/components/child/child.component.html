@@ -1,0 +1,11 @@
+<p>{{childTitle}}</p>
+<button (click)="leftpanelupdate()">Update left Panel as Left button</button> 
+<button (click)="rightpanelupdate()" style="margin-left: 20px;">Update Right Panel as Right button</button> <br /> <br />
+<div class="row">
+    <div class="col-md-5 bg-warning" style="height: 300px;">
+      <app-page-not-found-component [Childleftdata]="Childleftdataval" [Childleftbtn]="Childleftbtnval" (leftsidedata)="Updateleftdataval($event)"></app-page-not-found-component>
+    </div>
+    <div class="col-md-5 bg-info float-right" style="height: 300px;">
+      <app-childtemp [Childdata]="Childdataval" [Childrightbtn]="Childrightbtnval" (Updaterightdata)="Updaterightdataval($event)" ></app-childtemp>
+    </div>
+  </div>
