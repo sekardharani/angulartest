@@ -6,14 +6,14 @@ import { Observable, BehaviorSubject } from 'rxjs';
 })
 export class MessageService {
   
-  messageVal:string
-  private message = new BehaviorSubject<any>(this.messageVal);
-  messageData = this.message.asObservable();
+
+  private broadcastmessage = new BehaviorSubject<string>("My broadcast Message");
+  broadcast = this.broadcastmessage.asObservable();
 
   constructor() { }
 
-  updatedDataSelection(messageData){
-    this.message.next(messageData);
+  updatedDataSelection(newbroadcast: string){
+    this.broadcastmessage.next(newbroadcast);
   }
 
 }

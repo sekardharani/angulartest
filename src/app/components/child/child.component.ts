@@ -20,8 +20,7 @@ export class ChildComponent implements OnInit {
     this.childTitle = "child works! from TS file";
     this.Childdataval = "Right Side value";
     this.Childleftdataval = "Left Side value";
-    this.messageService.updatedDataSelection("newdata")
-    
+    this.messageService.broadcast.subscribe(broadcast => this.messageservicedata = broadcast);
   }
 
   Updaterightdataval(rirghtval:string){
@@ -29,6 +28,10 @@ export class ChildComponent implements OnInit {
   }
   Updateleftdataval(leftval:string){
     this.childTitle = leftval;
+  }
+
+  updateparentbroadcast(){
+    this.messageService.updatedDataSelection("Parent broadcast message")
   }
 
   leftpanelupdate(){
